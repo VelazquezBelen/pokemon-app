@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+
+
 export const AddPokemon = ({onNewPokemon}) => {
 
     const [inputValue, setInputValue] = useState('');
@@ -9,8 +11,7 @@ export const AddPokemon = ({onNewPokemon}) => {
     }
 
     const onSubmit = (event) => {
-        event.preventDefault();
-        
+        event.preventDefault();        
         onNewPokemon( inputValue.trim() );
     }
 
@@ -19,7 +20,7 @@ export const AddPokemon = ({onNewPokemon}) => {
             <h2>Pokédex</h2>
             <p>Search for a Pokémon by name or using its number</p>
             <form onSubmit={ onSubmit }>
-            <span className="material-symbols-outlined">search</span>
+                <span className="material-symbols-outlined">search</span>                
                 <input 
                     type="text"
                     placeholder="Name or number"

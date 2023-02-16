@@ -1,6 +1,5 @@
-import React from 'react'
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth'
 
 export const Header = () => {
@@ -16,10 +15,15 @@ export const Header = () => {
 
   return (
     <div className="header">
-        <span>
-            {user?.name}
-        </span>
-        <button onClick={ onLogout }>Logout</button>
+        <div>
+            <Link to={`home`}>Home</Link>
+            <Link to={`favorites`}>My Favorites</Link>
+        </div>
+        <div>
+           <span> {user?.name} </span>
+            <button onClick={ onLogout }>Logout</button> 
+        </div>
+        
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { AppRouter } from "./router/AppRouter";
 export const PokemonApp = () => {
     return (
         <AuthProvider>
-            <AppRouter />        
+            <AppRouter />
         </AuthProvider>
     )
 }

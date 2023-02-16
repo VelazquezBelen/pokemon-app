@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getPokemonData } from '../helpers/getPokemonData';
 import { getPokemonList } from '../helpers/getPokemonList'
 import { NotFound } from './NotFound';
@@ -60,7 +60,7 @@ export const PokemonList = ({pokemonName}) => {
                     pokemons.map( pokemon => (
                         <PokemonCard 
                             key={pokemon.id} 
-                            {...pokemon}
+                            {...pokemon}                         
                         />
                     ))
                 }
