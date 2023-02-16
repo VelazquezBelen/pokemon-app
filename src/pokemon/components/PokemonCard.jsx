@@ -1,6 +1,6 @@
-import { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { Star } from '../../icons/Star';
 import { onChangeFavorite } from '../../store/slices/favorites';
 
 export const PokemonCard = ({
@@ -10,7 +10,7 @@ export const PokemonCard = ({
 	image,
 }) => {
 
-	//const { onChangeFavorite, isFavorite } = useContext(FavoritesContext);
+	
 	const { favorites } = useSelector( state => state.favorites );
 	const dispatch = useDispatch();
 
@@ -18,14 +18,9 @@ export const PokemonCard = ({
 
 	return (
 		<div className="pokemon-card">
-			<button className="btn-favourite" onClick={ () => dispatch(onChangeFavorite({id, name, types, image})) }>
-			{ isFavorite
-				? <span className="material-symbols-outlined fill">
-					grade
-				</span>
-				: <span className="material-symbols-outlined">
-					grade
-				</span>
+			<button className="btn-favorite" onClick={ () => dispatch(onChangeFavorite({id, name, types, image})) }>
+			{ 
+				isFavorite ? <Star className="fill" /> : <Star />
 			}
 			</button>
 			<Link to={`/pokemon/${id}`}>

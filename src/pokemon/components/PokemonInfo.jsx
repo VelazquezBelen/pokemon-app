@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { onChangeFavorite } from "../../store/slices/favorites";
 import { EvolutionChain } from "./EvolutionChain"
-
+import { Star } from '../../icons/Star';
 
 export const PokemonInfo = ({
 	name,
@@ -26,16 +26,12 @@ export const PokemonInfo = ({
 			<div className="pokemon-card-info">
 				<img src={image} alt="Imagen del pokemon" />
 				<div className="pokemon-card-list">
-				<button className="btn-favourite" onClick={ () => dispatch(onChangeFavorite({id, name, types, image}) )}>
-					{ isFavorite
-					? <span className="material-symbols-outlined fill">
-						grade
-					</span>
-					: <span className="material-symbols-outlined">
-						grade
-					</span>
-					}	
-				</button>					
+				<button className="btn-favorite" onClick={ () => dispatch(onChangeFavorite({id, name, types, image})) }>
+				{ 
+					isFavorite ? <Star className="fill" /> : <Star />
+				}
+				</button>
+									
 					<p>{flavor_text_entry}</p>
 					<ul>
 						<li>

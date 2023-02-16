@@ -16,7 +16,9 @@ export const Header = () => {
   return (
     <div className="header">
         <div>
-            <Link to={`home`}>Home</Link>
+            <Link to={`home`}>   
+                Pokédex
+            </Link>
             <Link to={`favorites`}>My Favorites</Link>
         </div>
         <div>
