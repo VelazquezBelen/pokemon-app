@@ -4,7 +4,6 @@ export const favoritesSlice = createSlice({
     name: 'favorites',
     initialState: {
         favorites: [],
-        isLoading: false,
     },
     reducers: {
         onChangeFavorite: (state, action) => {
@@ -22,4 +21,4 @@ export const favoritesSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const { onChangeFavorite, } = favoritesSlice.actions;
+export const { onChangeFavorite } = favoritesSlice.actions;
